@@ -22,9 +22,9 @@
   </head>
   <body>
     <h1 id="satu" class="text-center mt-5 hello">Hello, Chatwoot!</h1>
-
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
+    <div class="container"></div>
 
     <script>
       function onSignIn(googleUser) {
@@ -33,12 +33,16 @@
         console.log("Name: " + profile.getName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+        $(".container").append(
+          `<img class="pp" src=${profile.getImageUrl()} alt="Girl in a jacket" width="500" height="600">`
+        );
       }
       function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
           console.log("User signed out.");
         });
+        $(".pp").remove();
       }
     </script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
