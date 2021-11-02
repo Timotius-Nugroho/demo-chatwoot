@@ -49,7 +49,7 @@
 
     <script>
       (function (d, t) {
-        var BASE_URL = "http://52.148.88.136";
+        var BASE_URL = "https://chatwoot-digital-center.herokuapp.com";
         var g = d.createElement(t),
           s = d.getElementsByTagName(t)[0];
         g.src = BASE_URL + "/packs/js/sdk.js";
@@ -58,7 +58,7 @@
         s.parentNode.insertBefore(g, s);
         g.onload = function () {
           window.chatwootSDK.run({
-            websiteToken: "nkFzWXKW7ncTCC7ccewKiFq9",
+            websiteToken: "BaeSnAj1PbfrYqt87nC25oPC",
             baseUrl: BASE_URL,
           });
         };
@@ -82,6 +82,16 @@
             <div class="position-absolute top-100 start-50 translate-middle" style="height: 60px; width: 200px; background-color:#f4f6fb;">
             </div>
             `);
+        });
+      });
+      window.addEventListener("chatwoot:ready", function () {
+        console.log("SET _USERRRRR");
+
+        window.$chatwoot.setUser("some-rude", {
+          name: "NEW-HASH",
+          email: "some@dews.comx",
+          identifier_hash:
+            "cdd07733be71ac710deddc9e9aefc6f0a0abec92d63979802ac4d5cfadd91c72",
         });
       });
     </script>
