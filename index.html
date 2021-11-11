@@ -21,11 +21,6 @@
     <title>ChatWoot Example</title>
   </head>
   <body>
-    <iframe
-      width="700"
-      height="200"
-      src="htt‍ps://www‍.youtube.com/live_chat?v=Gn3HxPndtiI&embed_domain=https://demo-chatwoot.netlify.app/"
-    ></iframe>
     <h1 id="satu" class="text-center mt-5 hello">Hello, Chatwoot!</h1>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
@@ -49,6 +44,17 @@
         });
         $(".pp").remove();
       }
+    </script>
+    <script>
+      let frame = document.createElement("iframe");
+      frame.referrerPolicy = "origin";
+      frame.src =
+        "https://www.youtube.com/live_chat?v=Gn3HxPndtiI&embed_domain=" +
+        window.location.hostname;
+      frame.frameBorder = "0";
+      frame.id = "chat-embed";
+      let wrapper = document.getElementById("chat-embed-wrapper");
+      wrapper.appendChild(frame);
     </script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
