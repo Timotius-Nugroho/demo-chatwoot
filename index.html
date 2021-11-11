@@ -25,7 +25,10 @@
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
     <div class="container"></div>
-    <div id="chat-embed-wrapper"></div>
+    <div
+      id="chat-embed-wrapper"
+      style="width: 100%; background-color: aqua"
+    ></div>
 
     <script>
       function onSignIn(googleUser) {
@@ -50,9 +53,11 @@
       let frame = document.createElement("iframe");
       frame.referrerPolicy = "origin";
       frame.src =
-        "https://www.youtube.com/live_chat?v=Gn3HxPndtiI&embed_domain=" +
+        "https://www.youtube.com/live_chat?v=nQ9a96O2REA&embed_domain=" +
         window.location.hostname;
       frame.frameBorder = "0";
+      frame.height = "400px";
+      frame.width = "400px";
       frame.id = "chat-embed";
       let wrapper = document.getElementById("chat-embed-wrapper");
       wrapper.appendChild(frame);
